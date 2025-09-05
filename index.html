@@ -1,192 +1,178 @@
-
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshu Kakkar - Professional Portfolio</title>                
-    <style>
-        nav {
-            display: flex;
-            justify-content: Left;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anshu Kakkar - Professional Portfolio</title>                
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #f1f1f1;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        nav a:hover {
-            color: #ff4081;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #121212);
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
 
-        section {
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 2px solid #ff4081;
+    }
 
-        section h2 {
-            border-bottom: 2px solid #ff4081;
-            padding-bottom: 10px;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 10px 0;
+      color: #ff4081;
+    }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    header p {
+      margin: 5px 0;
+    }
 
-        li {
-            margin: 10px 0;
-        }
+    header img {
+      margin-top: 15px;
+      border-radius: 50%;
+      border: 3px solid #ff4081;
+      box-shadow: 0 4px 10px rgba(255, 64, 129, 0.6);
+    }
 
-        footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: left;
-            padding: 20px 0;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        a {
-            color: #ff4081;
-        }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f1f1f1;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
 
-        a:hover {
-            color: #c5f9d7;
-        }
+    nav a:hover {
+      color: #ff4081;
+    }
 
-        .email-link {
-            color: white;
-        }
+    section {
+      padding: 40px;
+      margin: 30px auto;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .linkedin-link {
-            color: red;
-        }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #ff4081;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+    section h2, section h3, section h4 {
+      border-bottom: 2px solid #ff4081;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #ff4081;
+    }
 
-        .button:hover {
-            background-color: #c5f9d7;
-        }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-        .resume-button {
-            text-align: right;
-            margin-top: 20px;
-        }
-    </style>
+    li {
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #ff4081;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #c5f9d7;
+    }
+
+    .email-link {
+      color: #ddd;
+    }
+
+    .linkedin-link {
+      color: #0e76a8;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff4081;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .button:hover {
+      background-color: #c5f9d7;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .resume-button {
+      text-align: center;
+      margin: 30px 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Anshu Kakkar</h1>  
-   <p>Finance Professional | MS-Office Specialist|</p>
-    <p> <img src="1733919609374.jpg" alt="ANSHU KAKKAR" width="200" height="200"> <p>
-    </header>
-    <nav>
-        <a href="#About Me">About Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#Technical Proficiencies">Technical Proficiencies</a>
-        <a href="#Skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section id="About Me">
-        <h2>About Me</h2>
-        <p>A detail-oriented and results-driven Accounts Professional with expertise in financial management, reporting, and administrative operations. Proficient in MS Office, Tally Prime, and data analysis, with strong analytical, problem-solving, and communication skills. Holds an MBA in Finance & IT and a B.Com (Hons), driving efficiency and accuracy in financial processes.</p>
-    </section>
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <ul>
-            <li><strong>Accounts and Office Specialist</strong> </li>
-            <ul>
-                <li>Spearheaded the maintenance of comprehensive sales records, ensuring accuracy and timely updates.</li>
-                <li>Crafted detailed and precise sales quotations, aiding in effective client communication and deal closure.</li>
-                <li>Streamlined administrative operations, enhancing overall organizational efficiency.</li>
-                <li>Successfully managed and executed bank-related activities with high accuracy and professionalism.</li>
-            </ul>
-        </ul>
-    </section>
-    <section id="qualifications">
-        <h2>Academic Qualifications</h2>
-        <ul>
-            <li><strong>MBA in Finance & IT</strong> - Swami Vivekanand University-62% (First divison)(</li>
-            <li><strong>B.Com (Hons)</strong> - Govt. P.G. College,sec-9, Gurugram(First Division)</li>
-            <li><strong>Class 12 (CBSE)</strong> - S.D.Memorial Sr.sec.School,Gurugram-Scored 82%</li>
-            <li><strong>Class 10 (CBSE)</strong> - S.D.Memorial.Sr.sec.School,Gurugram-Achieved 8.6 CGPA</li>
-        </ul>
-    </section>
-    <section id="Technical Proficiencies">
-        <h3>Technical Proficiencies</h3>
-        <ul>
-            <li>MS Office Suite: Advanced expertise in Microsoft Office for document creation, data analysis, and presentations.</li>
-            <li>Tally Prime Certification: Proficient in utilizing Tally Prime for bookkeeping, financial statement preparation, and inventory management.</li>
-            <li>Tally Essential Level 3 By Tally Education - Certificate id-904373811.</li> 
-            <p> CERTIFICATE</p>
-            <img src="Tally.certificate.png" alt="TALLY ESSENTIAL LEVEL" width="200" height="200">
-       </ul>
-     </section>
-        <section id="Skills">
-             <h4>Skills</h4>
-          <ul> 
-            <li>FINANCIAL ACUMEN.</li>
-            <li>-Skilled in analyzing complex financial data to derive actionable insights.</li>
-            <li>-Proficient in generating comprehensive financial reports.</li>
-            <li>ADMINISTRATIVE/OPERATIONAL SKILLS.</li>
-            <li>-Exceptional attention to detail in data entry and management.</li>
-            <li>-Adapt at time management and multitasking to meet tight deadlines.</li>
-            <li>SOFT SKILLS</li>
-            <li>-Strong analytical and problem-solving abilities.</li>
-            <li>-Effective team player with excellent collaboration skills.</li>
-            <li>-Adaptable to dynamic environments and quick to learn new technologies.</li>
-            <li>-Excellent verbal and written communication skills.</li>
-        </ul>
-    </section>
-    <section id="interests">
-        <h2>Personal Interests</h2>
-        <ul>
-            <li>Exploring diverse genres of music.</li>
-            <li>Reading books to expand knowledge and perspective.</li>
-        </ul>
-    </section>
-    <section id="languages">
-        <h2>Languages</h2>
-        <ul>
-            <li>Hindi</li>
-            <li>English</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><strong>Address:</strong> H. No. 46/8, 4/8 Marla, Model Town, sector-11,Gurgaon, Haryana</p>
-        <p><strong>Phone:</strong> +91-9667546345</p>
-        <p><strong>Email:</strong> <a href="mailto:anshukakkar1234@gmail.com" class="email-link">anshukakkar1234@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/anshu-kakkar-1aa770145?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin-link">Click Here</a></p>
-        <p>Whatsapp: <a href="https://api.whatsapp.com/send/?phone=919667546345&text&type=phone_number&app_absent=0&wame_ctl=1 class="Whatsapp-link">Click Here</a></p>
-    </section>
-    <div class="resume-button">
-        <a href="https://drive.google.com/file/d/1HMjF1D0029G8OG0Pa_d-ppcgsW18ll7j/view?usp=drivesdk" class="button" target="_blank">Download Resume</a>
-    </div>
-    <footer>
-        <p>© 2025 Anshu Kakkar. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>Anshu Kakkar</h1>  
+    <p>Finance Professional | MS-Office Specialist</p>
+    <img src="1733919609374.jpg" alt="ANSHU KAKKAR" width="200" height="200">
+  </header>
 
-    <script>
+  <nav>
+    <a href="#About Me">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#Technical Proficiencies">Technical Proficiencies</a>
+    <a href="#Skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Your sections remain the same -->
+  <!-- Just copy your About Me, Experience, Skills, etc. content here -->
+
+  <div class="resume-button">
+    <a href="https://drive.google.com/file/d/1HMjF1D0029G8OG0Pa_d-ppcgsW18ll7j/view?usp=drivesdk" class="button" target="_blank">Download Resume</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Anshu Kakkar. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
