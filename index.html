@@ -207,22 +207,5 @@
     </footer>
 
     <script>
-        const floatingBackground = document.getElementById('floatingBackground');
-
-        function createFloatingNumber() {
-            const number = document.createElement('div');
-            number.classList.add('number');
-            number.textContent = Math.floor(Math.random() * 100);
-            number.style.left = Math.random() * 100 + 'vw';
-            number.style.animationDuration = Math.random() * 7 + 8 + 's';
-            floatingBackground.appendChild(number);
-
-            setTimeout(() => {
-                floatingBackground.removeChild(number);
-            }, 15000);
-        }
-
-        setInterval(createFloatingNumber, 1000);
-    </script>
 </body>
 </html>
