@@ -1,194 +1,340 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anshu Kakkar - Professional Portfolio</title>
+  <title>Anshu Kakkar - Professional Portfolio</title>                
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
+    /* General Body */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f7fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #121212);
+      background-attachment: fixed;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
+    /* Header */
     header {
       text-align: center;
-      padding: 30px 20px;
-      background: #ffffff;
+      padding: 50px 20px 20px;
+      background: rgba(0, 0, 0, 0.6);
       border-bottom: 2px solid #2196f3;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      animation: fadeInDown 1.2s ease-in-out;
     }
 
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8rem;
       margin: 10px 0;
       color: #2196f3;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      margin: 5px 0;
+      opacity: 0.8;
     }
 
     header img {
-      width: 150px;
-      height: 150px;
+      margin-top: 15px;
       border-radius: 50%;
       border: 3px solid #2196f3;
-      box-shadow: 0 4px 10px rgba(33, 150, 243, 0.6);
+      box-shadow: 0 4px 15px rgba(33, 150, 243, 0.8);
+      transition: transform 0.3s ease;
     }
 
+    header img:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    /* Navbar */
     nav {
       display: flex;
       justify-content: center;
-      background: #ffffff;
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
+      margin: 0 15px;
       text-decoration: none;
-      margin: 0 18px;
-      color: #333;
-      font-weight: 500;
+      color: #f1f1f1;
+      font-weight: 600;
+      position: relative;
       transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #2196f3;
+      transition: width 0.4s;
     }
 
     nav a:hover {
       color: #2196f3;
     }
 
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sections */
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 50px;
+      margin: 40px auto;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
     }
 
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2em;
-      color: #2196f3;
+    section.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    section h2, section h3, section h4 {
       border-bottom: 2px solid #2196f3;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    section h3, section h4 {
+      padding-bottom: 10px;
+      margin-bottom: 20px;
       color: #2196f3;
-      border-bottom: 1px solid #2196f3;
-      padding-bottom: 3px;
-      margin-bottom: 15px;
     }
 
-    .about, .skills, .projects, .contact {
-      background: #fff;
-      margin-bottom: 25px;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .skills ul, .projects ul {
-      list-style: none;
+    /* Lists */
+    ul {
+      list-style-type: none;
       padding: 0;
     }
 
-    .skills li, .projects li {
-      background: #f0f4f8;
-      margin: 8px 0;
-      padding: 12px;
-      border-radius: 8px;
+    li {
+      margin: 10px 0;
+      transition: transform 0.3s ease;
     }
 
+    li:hover {
+      transform: translateX(8px);
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 30px;
+      font-size: 14px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Links */
     a {
       color: #2196f3;
-      text-decoration: none;
+      transition: color 0.3s;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: #c5f9d7;
     }
 
+    .email-link {
+      color: #ddd;
+    }
+
+    .linkedin-link {
+      color: #0e76a8;
+      font-weight: bold;
+    }
+
+    /* Buttons */
     .button {
       display: inline-block;
-      padding: 10px 18px;
-      margin: 8px 0;
+      padding: 12px 28px;
       background-color: #2196f3;
-      color: #fff;
-      border-radius: 6px;
-      transition: 0.3s;
+      color: white;
       text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(33,150,243,0.6);
+      transition: background-color 0.4s, transform 0.3s, box-shadow 0.3s;
     }
 
     .button:hover {
       background-color: #c5f9d7;
       color: #000;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
     }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #333;
-      color: #fff;
-      margin-top: 25px;
+    .resume-button {
+      text-align: right;
+      margin: 40px 20px;
+      animation: fadeInRight 1.5s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3; }
+      to { text-shadow: 0 0 20px #00c6ff, 0 0 40px #00c6ff; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="profile.jpg" alt="Your Photo">
-    <h1>Anshu Kakkar</h1>
-    <p>Professional Portfolio</p>
+    <h1>Anshu Kakkar</h1>  
+    <p>Finance Professional | MS-Office Specialist</p>
+    <img src="WhatsApp Image 2025-09-05 at 4.52.58 PM.jpeg" alt="ANSHU KAKKAR" width="200" height="200">
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <a href="#About Me">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#Technical Proficiencies">Technical Proficiencies</a>
+    <a href="#Skills">Skills</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" class="about">
+  <section id="About Me">
     <h2>About Me</h2>
-    <p>Hello! I'm Anshu Kakkar, passionate about technology, accounting, and training. I create professional solutions with a focus on excellence and detail.</p>
+    <p>A detail-oriented and results-driven Accounts Professional with expertise in financial management, reporting, and administrative operations. Proficient in MS Office, Tally Prime, and data analysis, with strong analytical, problem-solving, and communication skills. Holds an MBA in Finance & IT and a B.Com (Hons), driving efficiency and accuracy in financial processes.</p>
   </section>
 
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
+  <section id="experience">
+    <h2>Professional Experience</h2>
     <ul>
-      <li>Advanced Excel & Data Analysis</li>
-      <li>Accounting & Finance Management</li>
-      <li>Web Development (HTML, CSS, JS)</li>
-      <li>Training & Mentoring</li>
+      <li><strong>Accounts and Office Specialist</strong></li>
+      <ul>
+        <li>Spearheaded the maintenance of comprehensive sales records, ensuring accuracy and timely updates.</li>
+        <li>Crafted detailed and precise sales quotations, aiding in effective client communication and deal closure.</li>
+        <li>Streamlined administrative operations, enhancing overall organizational efficiency.</li>
+        <li>Successfully managed and executed bank-related activities with high accuracy and professionalism.</li>
+      </ul>
     </ul>
   </section>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
+  <section id="qualifications">
+    <h2>Academic Qualifications</h2>
     <ul>
-      <li>
-        <h3>Excel Automation Tools</h3>
-        <p>Developed advanced Excel templates for accounting and finance reporting.</p>
-      </li>
-      <li>
-        <h3>Portfolio Website</h3>
-        <p>A modern responsive portfolio showcasing professional work.</p>
-      </li>
-      <li>
-        <h3>Training Programs</h3>
-        <p>Created structured modules for computer training institute setup.</p>
-      </li>
+      <li><strong>MBA in Finance & IT</strong> - Swami Vivekanand University-62% (First division)</li>
+      <li><strong>B.Com (Hons)</strong> - Govt. P.G. College, Sec-9, Gurugram (First Division)</li>
+      <li><strong>Class 12 (CBSE)</strong> - S.D. Memorial Sr. Sec. School, Gurugram - Scored 82%</li>
+      <li><strong>Class 10 (CBSE)</strong> - S.D. Memorial Sr. Sec. School, Gurugram - Achieved 8.6 CGPA</li>
     </ul>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="Technical Proficiencies">
+    <h3>Technical Proficiencies</h3>
+    <ul>
+      <li>MS Office Suite: Advanced expertise in Microsoft Office for document creation, data analysis, and presentations.</li>
+      <li>Tally Prime Certification: Proficient in utilizing Tally Prime for bookkeeping, financial statement preparation, and inventory management.</li>
+      <li>Tally Essential Level 3 By Tally Education - Certificate ID-904373811.</li> 
+      <p>CERTIFICATE</p>
+      <img src="Tally.certificate.png" alt="TALLY ESSENTIAL LEVEL" width="200" height="200">
+    </ul>
+  </section>
+
+  <section id="Skills">
+    <h4>Skills</h4>
+    <ul> 
+      <li>FINANCIAL ACUMEN</li>
+      <li>- Skilled in analyzing complex financial data to derive actionable insights.</li>
+      <li>- Proficient in generating comprehensive financial reports.</li>
+      <li>ADMINISTRATIVE/OPERATIONAL SKILLS</li>
+      <li>- Exceptional attention to detail in data entry and management.</li>
+      <li>- Adept at time management and multitasking to meet tight deadlines.</li>
+      <li>SOFT SKILLS</li>
+      <li>- Strong analytical and problem-solving abilities.</li>
+      <li>- Effective team player with excellent collaboration skills.</li>
+      <li>- Adaptable to dynamic environments and quick to learn new technologies.</li>
+      <li>- Excellent verbal and written communication skills.</li>
+    </ul>
+  </section>
+
+  <section id="interests">
+    <h2>Personal Interests</h2>
+    <ul>
+      <li>Exploring diverse genres of music.</li>
+      <li>Reading books to expand knowledge and perspective.</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <ul>
+      <li>Hindi</li>
+      <li>English</li>
+    </ul>
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:anshu@example.com">anshu@example.com</a></p>
-    <p>Phone: +91-9990989729</p>
-    <a href="resume.pdf" class="button">Download Resume</a>
+    <p><strong>Address:</strong> H. No. 46/8, 4/8 Marla, Model Town, Sector-11, Gurgaon, Haryana</p>
+    <p><strong>Phone:</strong> +91-9667546345</p>
+    <p><strong>Email:</strong> <a href="mailto:anshukakkar1234@gmail.com" class="email-link">anshukakkar1234@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/anshu-kakkar-1aa770145" class="linkedin-link">Click Here</a></p>
+    <p>Whatsapp: <a href="https://api.whatsapp.com/send/?phone=919667546345" class="Whatsapp-link">Click Here</a></p>
   </section>
+
+  <div class="resume-button">
+    <a href="https://drive.google.com/file/d/1HMjF1D0029G8OG0Pa_d-ppcgsW18ll7j/view?usp=drivesdk" class="button" target="_blank">Download Resume</a>
+  </div>
+
+  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fanshukakkar1234%2Fposts%2Fpfbid0V82NkS8fHrBX8Mkk4LnmK8zRa6Tst9BSC4owu7nSFoQm99wQcTSVPxFQ8fpWjNh2l&show_text=true&width=500" width="500" height="252" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZvLvnKAi4PU?si=FkwtNww7aQA1D2w0&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   <footer>
-    <p>&copy; 2025 Anshu Kakkar. All Rights Reserved.</p>
+    <p>© 2025 Anshu Kakkar. All rights reserved.</p>
   </footer>
+
+  <!-- Fade-in Scroll Animation -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
