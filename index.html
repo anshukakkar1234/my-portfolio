@@ -17,6 +17,13 @@
       background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #121212);
       background-attachment: fixed;
       line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header {
@@ -24,23 +31,33 @@
       padding: 50px 20px 20px;
       background: rgba(0, 0, 0, 0.6);
       border-bottom: 2px solid #2196f3;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     header h1 {
       font-size: 2.5rem;
       margin: 10px 0;
       color: #2196f3;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header p {
       margin: 5px 0;
+      animation: fadeIn 1.8s ease-in-out;
     }
 
     header img {
       margin-top: 15px;
       border-radius: 50%;
       border: 3px solid #2196f3;
-      box-shadow: 0 4px 10px rgba(33, 150, 243, 0.6);
+      box-shadow: 0 4px 15px rgba(33, 150, 243, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 25px rgba(33, 150, 243, 0.9);
     }
 
     nav {
@@ -52,6 +69,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      animation: fadeIn 2.2s ease-in-out;
     }
 
     nav a {
@@ -59,11 +77,12 @@
       text-decoration: none;
       color: #f1f1f1;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
 
     nav a:hover {
       color: #2196f3;
+      transform: scale(1.1);
     }
 
     section {
@@ -75,11 +94,12 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 2.5s ease-in-out;
     }
 
     section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
     }
 
     section h2, section h3, section h4 {
@@ -87,6 +107,20 @@
       padding-bottom: 10px;
       margin-bottom: 20px;
       color: #2196f3;
+      position: relative;
+      animation: fadeIn 2.8s ease-in-out;
+    }
+
+    section h2::after, section h3::after, section h4::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #2196f3;
+      border-radius: 5px;
+      animation: fadeIn 3s ease-in-out;
     }
 
     ul {
@@ -96,6 +130,12 @@
 
     li {
       margin: 10px 0;
+      transition: transform 0.3s ease;
+    }
+
+    li:hover {
+      transform: translateX(8px);
+      color: #c5f9d7;
     }
 
     footer {
@@ -105,6 +145,7 @@
       padding: 25px 10px;
       margin-top: 30px;
       font-size: 14px;
+      animation: fadeIn 3.2s ease-in-out;
     }
 
     a {
@@ -133,18 +174,26 @@
       text-decoration: none;
       border-radius: 30px;
       font-weight: 600;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: fadeIn 3.5s ease-in-out;
     }
 
     .button:hover {
       background-color: #c5f9d7;
       color: #000;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .resume-button {
       text-align: RIGHT;
       margin: 30px 0;
+    }
+
+    iframe {
+      margin: 20px auto;
+      display: block;
+      border-radius: 12px;
+      animation: fadeIn 3.8s ease-in-out;
     }
   </style>
 </head>
@@ -243,11 +292,15 @@
     <p>LinkedIn: <a href="https://www.linkedin.com/in/anshu-kakkar-1aa770145" class="linkedin-link">Click Here</a></p>
     <p>Whatsapp: <a href="https://api.whatsapp.com/send/?phone=919667546345" class="Whatsapp-link">Click Here</a></p>
   </section>
+
   <div class="resume-button">
     <a href="https://drive.google.com/file/d/1HMjF1D0029G8OG0Pa_d-ppcgsW18ll7j/view?usp=drivesdk" class="button" target="_blank">Download Resume</a>
   </div>
-  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fanshukakkar1234%2Fposts%2Fpfbid0V82NkS8fHrBX8Mkk4LnmK8zRa6Tst9BSC4owu7nSFoQm99wQcTSVPxFQ8fpWjNh2l&show_text=true&width=500" width="500" height="252" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZvLvnKAi4PU?si=FkwtNww7aQA1D2w0&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fanshukakkar1234%2Fposts%2Fpfbid0V82NkS8fHrBX8Mkk4LnmK8zRa6Tst9BSC4owu7nSFoQm99wQcTSVPxFQ8fpWjNh2l&show_text=true&width=500" width="500" height="252" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZvLvnKAi4PU?si=FkwtNww7aQA1D2w0&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
   <footer>
     <p>© 2025 Anshu Kakkar. All rights reserved.</p>
   </footer>
