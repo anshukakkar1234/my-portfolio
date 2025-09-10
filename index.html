@@ -294,20 +294,35 @@
     <p>LinkedIn: <a href="https://www.linkedin.com/in/anshu-kakkar-1aa770145" class="linkedin-link">Click Here</a></p>
     <p>Whatsapp: <a href="https://api.whatsapp.com/send/?phone=919667546345" class="Whatsapp-link">Click Here</a></p>
   </section>
-  <style>
-.fab{position:fixed;right:15px;bottom:15px;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;
-     padding:10px 15px;border-radius:30px;font-family:sans-serif;font-size:14px;cursor:pointer;
-     box-shadow:0 4px 10px rgba(0,0,0,.2)}
+<style>
+.fab{position:fixed;right:15px;bottom:15px;display:flex;align-items:center;gap:8px;
+     background:#25D366;color:#fff;padding:10px 15px;border-radius:30px;font-family:sans-serif;
+     font-size:14px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:9999}
 .fab svg{width:20px;height:20px;fill:#fff}
+.popup{position:fixed;right:15px;bottom:70px;width:250px;display:none;flex-direction:column;
+       background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.25);font-family:sans-serif;z-index:9999}
+.popup header{background:#25D366;color:#fff;padding:8px 10px;display:flex;justify-content:space-between;
+              align-items:center;font-size:14px;border-radius:10px 10px 0 0}
+.popup input{margin:10px;border:1px solid #ccc;border-radius:5px;padding:8px;font-size:13px}
+.popup button{margin:10px;background:#25D366;color:#fff;border:none;padding:8px;border-radius:5px;
+              cursor:pointer;font-size:14px}
 </style>
-
-<!-- Button -->
-<div class="fab" onclick="window.open('https://wa.me/919667546345?text=Hello%2C%20I%20want%20to%20send%20a%20query','_blank')">
-  <!-- Official WhatsApp Icon -->
+<div class="fab" onclick="waPopup.style.display='flex'">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 .5C7.44.5.5 7.44.5 16c0 2.75.72 5.44 2.09 7.82L.5 31.5l7.91-2.06A15.42 15.42 0 0 0 16 31.5c8.56 0 15.5-6.94 15.5-15.5S24.56.5 16 .5Zm0 28.18c-2.52 0-4.99-.67-7.14-1.93l-.51-.3-4.7 1.22 1.25-4.58-.33-.53A12.49 12.49 0 1 1 28.5 16c0 6.9-5.6 12.5-12.5 12.5Zm6.85-9.3c-.38-.19-2.27-1.12-2.62-1.25-.35-.13-.6-.19-.86.19-.25.38-.99 1.25-1.21 1.5-.22.25-.45.28-.83.09-.38-.19-1.59-.59-3.03-1.88-1.12-.99-1.88-2.21-2.1-2.59-.22-.38-.02-.58.16-.77.16-.16.38-.42.57-.63.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.09-.19-.86-2.07-1.18-2.84-.31-.75-.63-.64-.86-.65-.22-.01-.47-.01-.72-.01-.25 0-.66.09-1.01.47-.35.38-1.32 1.29-1.32 3.14s1.35 3.64 1.54 3.89c.19.25 2.65 4.06 6.43 5.69.9.39 1.6.62 2.15.8.9.29 1.72.25 2.37.15.72-.11 2.27-.93 2.59-1.82.32-.9.32-1.67.22-1.82-.09-.15-.35-.25-.73-.44Z"/>
   </svg>
-  chat with us
+chat with us 
+</div>
+<!-- Popup -->
+<div class="popup" id="waPopup">
+  <header>
+    <span>WhatsApp Query</span>
+    <span style="cursor:pointer" onclick="waPopup.style.display='none'">&#10005;</span>
+  </header>
+  <input id="waMsg" placeholder="Type your query...">
+  <button onclick="window.open('https://wa.me/919667546345?text='+encodeURIComponent(waMsg.value||'Hello'),'_blank');waPopup.style.display='none'">
+    Send
+  </button>
 </div>
   <div class="resume-button">
     <a href="https://drive.google.com/file/d/1HMjF1D0029G8OG0Pa_d-ppcgsW18ll7j/view?usp=drivesdk" class="button" target="_blank">Download Resume</a>
