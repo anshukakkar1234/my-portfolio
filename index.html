@@ -26,14 +26,14 @@
       text-align: center;
       padding: 50px 20px 20px;
       background: rgba(0, 0, 0, 0.6);
-      border-bottom: 2px solid #d8ebff;
+      border-bottom: 2px solid #001f3f;
       animation: fadeInDown 1.2s ease-in-out;
     }
 
     header h1 {
       font-size: 2.8rem;
       margin: 10px 0;
-      color: #d8ebff;
+      color: #001f3f;
       animation: glow 2s infinite alternate;
     }
 
@@ -45,7 +45,7 @@
     header img {
       margin-top: 15px;
       border-radius: 50%;
-      border: 3px solid #d8ebff;
+      border: 3px solid #001f3f;
       box-shadow: 0 4px 15px rgba(33, 150, 243, 0.8);
       transition: transform 0.3s ease;
     }
@@ -77,12 +77,12 @@
       height: 2px;
       left: 0;
       bottom: -5px;
-      background: #d8ebff;
+      background: #001f3f;
       transition: width 0.4s;
     }
 
     nav a:hover {
-      color: #d8ebff;
+      color: #001f3f;
     }
 
     nav a:hover::after {
@@ -198,8 +198,8 @@
       to { opacity: 1; transform: translateX(0); }
     }
   @keyframes glow {
-      from { text-shadow: 0 0 10px #d8ebff, 0 0 20px #d8ebff; }
-      to { text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff; }
+      from { text-shadow: 0 0 10px #001f3f, 0 0 20px #001f3f; }
+      to { text-shadow: 0 0 20px #002855, 0 0 40px #002855; }
     }
   </style>
 </head>
@@ -293,15 +293,15 @@
   </section>
 <style>
 .fab{position:fixed;right:15px;bottom:15px;display:flex;align-items:center;gap:8px;
-     background:#25D366;color:#fff;padding:10px 15px;border-radius:30px;font-family:sans-serif;
+     background:#25D366;color:#002855;padding:10px 15px;border-radius:30px;font-family:sans-serif;
      font-size:14px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:9999}
-.fab svg{width:20px;height:20px;fill:#fff}
+.fab svg{width:20px;height:20px;fill:#002855}
 .popup{position:fixed;right:15px;bottom:70px;width:250px;display:none;flex-direction:column;
        background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.25);font-family:sans-serif;z-index:9999}
-.popup header{background:#25D366;color:#fff;padding:8px 10px;display:flex;justify-content:space-between;
+.popup header{background:#25D366;color:#002855;padding:8px 10px;display:flex;justify-content:space-between;
               align-items:center;font-size:14px;border-radius:10px 10px 0 0}
 .popup input{margin:10px;border:1px solid #ccc;border-radius:5px;padding:8px;font-size:13px}
-.popup button{margin:10px;background:#25D366;color:#fff;border:none;padding:8px;border-radius:5px;
+.popup button{margin:10px;background:#25D366;color:#002855;border:none;padding:8px;border-radius:5px;
               cursor:pointer;font-size:14px}
 </style>
 <div class="fab" onclick="waPopup.style.display='flex'">
